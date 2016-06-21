@@ -29,11 +29,13 @@ three classes,
 * The addition of major features to the compiler (e.g. ``-XTypeInType``, GHCi
   commands)
 
+* The removal of major features from the compiler
+
 Note how this does not include changes to the Haskell Report (which are overseen
 by the Haskell Prime committee) nor the core libraries (which is covered by the
 Core Libraries Committee).
 
-The problem
+The Problem
 -----------
 
 Let's start by examining a few of the shortcomings of our current process,
@@ -96,15 +98,32 @@ building our proposal process on top of existing code review tools such as
 Github. These tools enjoy a large user-base, and are fairly effective in
 facilitating discussion.
 
-The process involves forming a small committee, which is openly responsible for
-casting a final vote to accept or reject proposed changes after discussion
-within the community. The committee includes major drivers of the GHC community
-and elected voluntary members.
+GHC committee
+-------------
 
-In cases where it's unclear whether a given change should require a formal
-proposal the committee is responsible for deciding, although it's expected that
-this should rarely be necessary.
+The process involves forming a small committee, which is responsible for
+deciding whether proposed changes should be accepted after discussion
+within the community. The committee should be large enough to reflect the
+diversity of GHC's contributor- and user-base but small enough to ensure a sense
+of individual responsibility among its members (starting in the range of six to
+eight members).
 
+To simplify the committee selection process, the committee will be composed from
+a pool of self-nominated candidates by Simon Peyton-Jones.
+
+The GHC committee will have two principle roles,
+
+* *Deciding proposal acceptance.* The committee has the ultimate decision over
+  whether a proposal should be accepted in light of a set of defined criteria
+  (see below).
+
+* *Judging whether the proposal process should be applied.* There will no doubt
+  be proposal where it is unclear whether the burden of the proposal process is
+  necessary. The responsibility for determining the scope of the process lies
+  with the committee.
+
+Proposal process
+----------------
 Each proposal goes through the following stages:
 
 1. The process begins with the opening of a pull request to the GHC RFC's
@@ -118,24 +137,28 @@ Each proposal goes through the following stages:
    change during this process, which may last from days to months.
 
 3. When the submitter feels that the proposal is reasonably concrete, they can
-   submit the proposal to the proposal committee for a final decision.
-   The committee will arrive at a consensus as to whether the proposal in its
-   submitted form is well-specified and sufficiently useful to merit inclusion.
-   It will do so accounting for the community comments provided on the ticket.
+   submit the proposal to the proposal committee for a decision.
+
+4. Within a one or two weeks the committee will arrive at a consensus as to
+   whether the proposal in its submitted form meets a set of criteria for
+   inclusion (see below) while weighing the opinions expressed by the community.
 
    If the proposal is rejected then it will be sent back to the submitter along
-   with a rationale. The submitter may then amend and re-submit the proposal.
+   with a rationale (referencing the criteria defined below). This is by no
+   means a final decision; the submitter may amend and re-submit the proposal to
+   address the concerns of the committee
 
 4. When the proposal is accepted the pull request will be merged and the
    document will be preserved in the RFCs repository as a permanent
    specification for the feature.
    
-5. The GHC maintainers will create a Trac ticket linking to the proposal to
-   provide a place to collect resources and discussion relevant to the
-   implementation effort.
+5. The proposer will create a Trac ticket linking to the proposal to
+   provide a place track the progress of the implementation.
 
 6. The submitter may choose to implement the proposal after acceptance, but is
-   under no obligation to do so.
+   under no obligation to do so. Of course, no one else is obligated to
+   undertake the project either, so proposal submitters will have an
+   interest in implementing their proposal themselves.
 
 7. Changes made to the specification arising from the proposal during
    development needs to be maintained by the implementor.
@@ -144,6 +167,15 @@ Since the RFC wiki pages already existing on Trac represent a significant amount
 of effort and knowledge, we'll make an effort to import these into the RFC
 repository if this scheme is adopted.
 
+Criteria for new features
+--------------------------
+
+The committee is ultimately responsible for weighing a variety of factors when determining the
+
+1. *User demand.* Do users generally want the change?
+2. *Likely usefulness.* Does the proposal address a problem that is felt by users?
+3. *Complexity of proposed semantics.* Is the feature difficult for users to understand?
+4. *Complexity of likely implementation.* Is the feature going to complicate the compiler immensely?
 
 Alternatives
 ------------
