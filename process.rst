@@ -130,7 +130,7 @@ Each proposal goes through the following stages:
    provide a place to collect resources and discussion relevant to the
    implementation effort.
 
-6. The proposal may choose to implement the proposal after acceptance, but is
+6. The submitter may choose to implement the proposal after acceptance, but is
    under no obligation to do so.
 
 7. Changes made to the specification arising from the proposal during
