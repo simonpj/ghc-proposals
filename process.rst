@@ -72,20 +72,29 @@ matters worse, none of these channels particularly excel at their task:
   interest.
   
 * Trac's Wiki has poor version control, no inline commenting functionality, and
-  a mark-up syntax which is foreign to many users
+  a mark-up syntax which is foreign to many potential users
 
 * Trac tickets are nearly entirely decoupled from the specification itself,
   making it hard to follow both the spatial and chronological structure of a
   discussion.
 
+Of course, Trac also has several nice properties,
+
+* Cross-referencing tickets, wiki pages, and comments is quite easy once you
+  learn the syntax
+
+* It already exists and a significant fraction of GHC developers are already
+  quite comfortable with it
+
 
 Proposed change
 ---------------
 
-I propose that we adopt a variant on the :ref:`Rust RFC scheme
-(https://github.com/rust-lang/rfcs#what-the-process-is)`, building our proposal
-process on top of existing code review tools such as Github. These tools enjoy a
-large user-base, and are fairly effective in facilitating discussion.
+I propose that we adopt a variant on the
+`Rust RFC scheme <https://github.com/rust-lang/rfcs#what-the-process-is>`_,
+building our proposal process on top of existing code review tools such as
+Github. These tools enjoy a large user-base, and are fairly effective in
+facilitating discussion.
 
 The process involves forming a small committee, which is openly responsible for
 casting a final vote to accept or reject proposed changes after discussion
@@ -157,6 +166,10 @@ There are a few alternatives which are worth considering,
   mailing lists.
 
 * something else...
+
+
+Moving closer to the Rust process
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Also, there are a few facets of the Rust process which the proposed process does
 not carry over for a variety of reasons:
