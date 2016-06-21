@@ -31,9 +31,11 @@ three classes,
 
 * The removal of major features from the compiler
 
-Note how this does not include changes to the Haskell Report (which are overseen
-by the Haskell Prime committee) nor the core libraries (which is covered by the
-Core Libraries Committee).
+Note how this does not include 
+
+* bug fixes to GHC
+* changes to the Haskell Report (which are overseen by the Haskell Prime committee)
+* changes to the core libraries (which is covered by the Core Libraries Committee)
 
 The Problem
 -----------
