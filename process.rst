@@ -103,18 +103,23 @@ GHC committee
 
 The process involves forming a small committee, which is responsible for
 deciding whether proposed changes should be accepted after discussion
-within the community. The committee should be large enough to reflect the
+within the community. 
+
+The committee should be large enough to reflect the
 diversity of GHC's contributor- and user-base but small enough to ensure a sense
-of individual responsibility among its members (starting in the range of six to
-eight members).
+of individual responsibility among its members.  I suggest that we start in the range of six to
+eight members.
 
-To simplify the committee selection process, the committee will be composed from
-a pool of self-nominated candidates by Simon Peyton-Jones.
+To simplify the committee selection process, I propose that the committee is chosen as folows.
+We seek nominations (including self-nominations); and then Simon Peyton-Jones and Simon Marlow
+select members from those nominations.  This is simple and clear.  It is also not very
+democratic, but Simon & Simon did originate GHC, and it is far from clear that a voting
+process would yield a better result.  (Also: who could vote? Who can decide who can vote? etc)
 
-The GHC committee will have two principle roles,
+The GHC committee will have two principal roles,
 
-* *Deciding proposal acceptance.* The committee has the ultimate decision over
-  whether a proposal should be accepted in light of a set of defined criteria
+* *Deciding proposal acceptance.* At the proposal author's invitation, the committee makes the decision over
+  whether a proposal should be accepted, in light of a set of defined criteria
   (see below).
 
 * *Judging whether the proposal process should be applied.* There will no doubt
@@ -136,10 +141,10 @@ Each proposal goes through the following stages:
    account for collected comments. It should be expected that the proposal will
    change during this process, which may last from days to months.
 
-3. When the submitter feels that the proposal is reasonably concrete, they can
-   submit the proposal to the proposal committee for a decision.
+3. When the submitter feels that the proposal is complete, and not being improved by further discussion,
+   they can submit the proposal to the proposal committee for a decision.
 
-4. Within a one or two weeks the committee will arrive at a consensus as to
+4. Within two (exceptionally three) weeks the committee will arrive at a consensus as to
    whether the proposal in its submitted form meets a set of criteria for
    inclusion (see below) while weighing the opinions expressed by the community.
 
@@ -156,12 +161,10 @@ Each proposal goes through the following stages:
    provide a place track the progress of the implementation.
 
 6. The submitter may choose to implement the proposal after acceptance, but is
-   under no obligation to do so. Of course, no one else is obligated to
-   undertake the project either, so proposal submitters will have an
-   interest in implementing their proposal themselves.
+   under no obligation to do so. (Of course, neither is anyone else.)
 
-7. Changes made to the specification arising from the proposal during
-   development needs to be maintained by the implementor.
+7. During implementation, it is very likely that the specification will be refined.
+   The implementor should keep the specification up to date. 
 
 Since the RFC wiki pages already existing on Trac represent a significant amount
 of effort and knowledge, we'll make an effort to import these into the RFC
@@ -170,12 +173,17 @@ repository if this scheme is adopted.
 Criteria for new features
 --------------------------
 
-The committee is ultimately responsible for weighing a variety of factors when determining the
+The committee is  responsible for weighing a variety of factors when deciding whether to adopt a feature.  These are all judgement calls.
 
-1. *User demand.* Do users generally want the change?
-2. *Likely usefulness.* Does the proposal address a problem that is felt by users?
-3. *Complexity of proposed semantics.* Is the feature difficult for users to understand?
-4. *Complexity of likely implementation.* Is the feature going to complicate the compiler immensely?
+1. *The problem*. What exactly is the problem that the feature solves solves?  Is it an important problem, felt by many users, or is it very specialised?
+
+2. *The right solution; generality*.  Elegance, economy, and generality are important.   Sometimes a problem has lots of solutions, none of whcih have that "aha" feeling of "this is the Right way to solve this". A classis example is that of records, for which we have had endless proposals (including many from the GHC authors themselves) none of which felt "right", and none of which made it into GHC.
+
+3. *Fit with the language*.  If we just throw things into GHC willy-nilly, it will become a large ball of incoherent and inconsistent mud.  We strive to add features that are consistent with the rest of the language.
+
+4. *Specification cost*.  Does the benefit of the feature justify the extra complexity in the language specification?  Does the new feature interact awkwardly with existing features, or does it enhance them?  How easy is it for users to understand the new feature?
+
+5. *Implementation cost*.  How complex is the implementation likely to be?  Is it highly localised, or does it require pervasive changes?  As an author, it may look like you are giving GHC free work, but this viewpoint doesn't align with the reality of a large project with a timescale in decades. Writing code is cheap; maintaining it is expensive.
 
 Alternatives
 ------------
