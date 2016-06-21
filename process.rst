@@ -101,6 +101,10 @@ casting a final vote to accept or reject proposed changes after discussion
 within the community. The committee includes major drivers of the GHC community
 and elected voluntary members.
 
+In cases where it's unclear whether a given change should require a formal
+proposal the committee is responsible for deciding, although it's expected that
+this should rarely be necessary.
+
 Each proposal goes through the following stages:
 
 1. The process begins with the opening of a pull request to the GHC RFC's
@@ -186,6 +190,14 @@ not carry over for a variety of reasons:
   omitted from the process described above; instead it is up to the proposal
   submitter to ensure that sufficient discussion is solicited.
 
+Open Questions
+--------------
+
+There are still questions regarding the desired scope of the process. While we
+want to process to ensure that changes which affect the user-facing aspects of
+the compiler are well-considered, we certainly don't want the process to become
+unduly burdensome. This is a careful balance which will require care to maintain
+moving forward.
 
 Acknowledgments
 ---------------
